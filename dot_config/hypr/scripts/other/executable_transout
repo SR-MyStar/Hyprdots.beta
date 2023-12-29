@@ -1,0 +1,1 @@
+notify-send -a "Transout" "$(crow -b "$(wl-paste -p)")"

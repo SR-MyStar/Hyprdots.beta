@@ -1,0 +1,7 @@
+ZDOTDIR=$HOME/.config/zsh
+ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+# Powerlevel10k 配置文件
+POWERLEVEL9K_CONFIG_FILE="$ZDOTDIR/.p10k.zsh"
+# 环境变量
+PATH="$HOME/.local/bin:$PATH"
+GPG_TTY=$(tty)

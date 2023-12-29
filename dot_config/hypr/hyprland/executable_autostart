@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+config="$HOME"/.config/hypr
+scripts="$config"/scripts
+
+# Cursor
+hyprctl setcursor "Afterglow-Recolored-Catppuccin-Blue-v3" 32
+
+# Notification daemon
+dunst &
+
+# Input method
+fcitx5 -d &
+
+# Waybar
+waybar &
+
+# Wallpaper
+#mpvpaper HDMI-A-1 -p -s ~/.config/hypr/chino.mp4 -o " --loop --no-audio " -f &
+"$scripts"/waybar/wall "$config"/wallpaper/Clannad.png
+
+# Clipborad
+wl-paste --type text --watch cliphist store &  # Stores only text data
+wl-paste --type image --watch cliphist store & # Stores only image data
+
+# Clash
+clash-verge &
+
+# Other
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+slurp -d -b "#00000000" -c "#89B4FA" -s "#00000044" -f "hyprctl keyword windowrule unset, region_terminal
+hyprctl keyword windowrule float,      region_terminal
+hyprctl keyword windowrule move %x %y, region_terminal
+hyprctl keyword windowrule size %w %h, region_terminal
+hyprctl keyword windowrule noborder,   region_terminal
+hyprctl keyword windowrule rounding 0, region_terminal
+wezterm start --class region_terminal" | bash
